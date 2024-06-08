@@ -6,22 +6,22 @@ import { useState } from "react"
 
 const navItems = [
   { id: 1, link: "Home", to: "/" },
-  { id: 2, link: "Our Compnay", to: "/About" },
-  { id: 3, link: "Locations", to: "/Location" },
-  { id: 4, link: "Contact", to: "/Contact" },
+  { id: 2, link: "Our Compnay", to: "/about" },
+  { id: 3, link: "Locations", to: "/location" },
+  { id: 4, link: "Contact", to: "/contact" },
 ]
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   return (
-    <nav className="w-full fixed top-0 left-0 p-4">
-      <div className="md:flex bg-white p-4 items-center justify-between">
+    <nav className="w-full fixed top-0 left-0">
+      <div className="md:flex bg-white p-4 sm:px-6 items-center justify-between">
         {/* Logo DIv */}
         <div className="flex items-center justify-between">
           {/* Icon and title Div */}
           <div className="flex items-center gap-2">
             <FiberSmartRecordIcon fontSize="medium" />
-            <span className="sm:text-2xl lg:text-3xl font-bold transition-all">
+            <span className="text-2xl lg:text-3xl font-bold transition-all">
               Designo
             </span>
           </div>
@@ -48,8 +48,8 @@ export const Navbar = () => {
 
         {/* Nav Links */}
         <ul
-          className={`flex flex-col md:flex-row gap-4 md:gap-6 md:items-center py-6 md:py-0 text-left text-xl md:text-2xl text-gray-400 transition-all duration-200 absolute md:static md:z-auto z-[-1] w-full md:w-auto ${
-            open ? "top-20 opacity-100" : "top-[-490px]"
+          className={`flex flex-col md:flex-row gap-4 md:gap-10 md:items-center bg-white py-6 md:py-0 text-left left-0 px-4 sm:px-6 text-xl md:text-2xl text-gray-400 transition-all duration-200 absolute md:static md:z-auto w-full md:w-auto ${
+            open ? "top-16 opacity-100" : "top-[-490px]"
           } md:opacity-100`}
         >
           {navItems.map((link) => {
@@ -58,6 +58,7 @@ export const Navbar = () => {
                 to={link.to}
                 className="hover:text-black hover:scale-105 transition-all duration-200 font-medium w-fit"
                 key={link.id}
+                onClick={() => setOpen(false)}
               >
                 {link.link}
               </Link>
