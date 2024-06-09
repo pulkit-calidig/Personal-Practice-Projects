@@ -14,7 +14,7 @@ const navItems = [
 export const Navbar = () => {
   const [open, setOpen] = useState(false)
   return (
-    <nav className="w-full fixed top-0 left-0">
+    <nav className="w-full">
       <div className="md:flex bg-white p-4 sm:px-6 items-center justify-between">
         {/* Logo DIv */}
         <div className="flex items-center justify-between">
