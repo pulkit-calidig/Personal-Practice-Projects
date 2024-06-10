@@ -6,7 +6,7 @@ export const Categories = () => {
 
   // * api call to get the catergories data from DB
   useEffect(() => {
-    fetch("http://localhost:3000/categories")
+    fetch("http://localhost:3001/categories")
       .then((res) => res.json())
       .then((data) => setCategories(data))
       .catch((err) => console.log(err))
