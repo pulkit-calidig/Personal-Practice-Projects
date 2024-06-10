@@ -19,9 +19,18 @@ const db = mysql.createConnection({
   database: "designo",
 })
 
-// * api call for data
+// * api call for categories
 app.get("/categories", (req, res) => {
   const sql = "SELECT * FROM Categories"
+  db.query(sql, (err, data) => {
+    if (err) return res.json(err)
+    return res.json(data)
+  })
+})
+
+// * api call for qualities
+app.get("/qualities", (req, res) => {
+  const sql = "SELECT * FROM Qualities"
   db.query(sql, (err, data) => {
     if (err) return res.json(err)
     return res.json(data)
