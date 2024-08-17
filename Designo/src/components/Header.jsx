@@ -21,7 +21,7 @@ export const Header = () => {
         className="hover:scale-110 transition-all duration-300"
         src={Mobile}
         alt="Mobile Phone"
-      />
+      /> 
     </div>
   )
 }
